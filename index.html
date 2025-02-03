@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #yesBtn {
+            background-color: #ff4081;
+            color: white;
+        }
+        #noBtn {
+            background-color: #999;
+            color: white;
+        }
+        .gif-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sé que esto lo debí hacer antes, pero nunca es tarde para mejorar y aprender a amarte como te mereces.</h1> 
+        <h2>Mi hermosa Deyssy Albornoz, ¿quisieras ser mi San Valentín?</h2> 
+        <div class="gif-container">
+            <img src="https://i.pinimg.com/originals/db/aa/c1/dbaac13f6278b91a15e480752b8a7242.gif" alt="San Valentín GIF" width="300">
+        </div>
+        <div class="buttons">
+            <button id="yesBtn" class="btn" onclick="goToLovePage()">SI</button>
+            <button id="noBtn" class="btn" onclick="shrinkNo()">NO</button>
+        </div>
+    </div>
+    
+    <script>
+        let noBtnSize = 20;
+        let yesBtnSize = 20;
+        
+        function shrinkNo() {
+            let noBtn = document.getElementById("noBtn");
+            let yesBtn = document.getElementById("yesBtn");
+            
+            noBtnSize -= 2;
+            yesBtnSize += 5;
+            
+            noBtn.style.fontSize = noBtnSize + "px";
+            yesBtn.style.fontSize = yesBtnSize + "px";
+        }
+
+        function goToLovePage() {
+            window.location.href = "love.html";
+        }
+    </script>
+</body>
+</html>
