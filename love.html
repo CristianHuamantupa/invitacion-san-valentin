@@ -12,22 +12,60 @@
         }
         .container {
             margin-top: 50px;
+            position: relative;
         }
         h1 {
             color: #d63384;
         }
         img {
-            max-width: 100%;
-            width: 300px; /* Ajustado al mismo tamaño del GIF */
-            border-radius: 10px;
+            width: 300px;
             margin-top: 20px;
+            cursor: pointer;
+            animation: moveImage 1.5s infinite alternate ease-in-out, blink 1s infinite;
+        }
+
+        /* Animación de movimiento */
+        @keyframes moveImage {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Te amo, y prometo que no te arrepentirás.</h1>
-        <img src="https://e1.pxfuel.com/desktop-wallpaper/74/375/desktop-wallpaper-snoopy-valentine-valentines-day-peanuts-characters.jpg" alt="Snoopy Valentine">
+        <h1>Gracias por hacerme el hombre más feliz 🥰. Te amo 💖 y prometo que no te arrepentirás.</h1>
+        <p><strong>Haz clic en la imagen para escuchar la sorpresa 🎶</strong></p>
+        <img id="snoopyImg" src="https://e1.pxfuel.com/desktop-wallpaper/74/375/desktop-wallpaper-snoopy-valentine-valentines-day-peanuts-characters.jpg" alt="Snoopy San Valentín">
     </div>
+
+    <!-- Reproductor de audio -->
+    <audio id="music" loop>
+        <source src="cancion.mp3" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <script>
+        let music = document.getElementById("music");
+        let snoopyImg = document.getElementById("snoopyImg");
+
+        snoopyImg.addEventListener("click", function () {
+            music.play();
+            snoopyImg.style.animation = "none"; // Detener animaciones después del clic
+        });
+    </script>
 </body>
 </html>
